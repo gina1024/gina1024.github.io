@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #A9F1B5;   /* background color */
+	color: #444;          /* text color for the entire page */
+}
+
+h1, h2 { 
+	text-align:center;     /* centers h1 and h2 content */
+}
+
+/* styles for the "wrapper" div, notice that "wrapper" is preceded by "#" */
+#wrapper {
+	width: 85%;
+	margin: 0 auto;    /* centers wrapper */
+}
+
+/* styles for the "stepTitle" class, notice that "stepTitle" is preceded by a dot */
+.stepTitle{
+	padding:10px;
+	text-align:left;
+	background-color:#EBEB8C;
+	font-weight: bold;
+	font-size: 180%;
+ }
+
+.stepContent{ 
+	background-color: white;
+	padding:10px;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: center;
+}
+
+.stepDescription {
+	width:55%;
+	padding:15px;
+	line-height:145%;
+	font-size: 30px;
+}
+
+.stepImage {
+	width:30%;	
+	padding:5px;
+	text-align: center;
+}
+
+.stepImage img {
+    width:100%;
+    height:auto;
+}
+
+strong {
+  font-weight: 800;
+	
+}
+#sources {
+	background-color: white;
+	padding:10px;
+	font-size: 24px;
+
+}
+
