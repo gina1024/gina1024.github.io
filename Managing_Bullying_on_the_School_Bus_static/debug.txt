@@ -1,0 +1,6 @@
+Date Built: 2025-09-27T17:30:39.283Z
+    
+VERCEL_GIT_COMMIT_SHA: 29d98e37f740cd43ea5ed809946f76f673892efc
+VERCEL_GIT_COMMIT_MESSAGE: Merge pull request #1739 from MindsmithAI/refinement-scenario-bg-broken
+
+refinement: scenario bg broken
