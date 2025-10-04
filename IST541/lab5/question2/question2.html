@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>question2</title>
+
+<link href="css/fitnes.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+</script>
+	
+</head>
+	
+<body>
+<div id="wrapper">
+	 <h1>Why is exercise important?</h1>
+	 <h3>Click on one of the following choices
+	 </h3>
+	 <h2 onclick="wrongAnswer1()"  class="choices"> Increased risk of depression and anxiety 
+	 </h2>
+	 <h2 onclick="wrongAnswer2()" class="choices"> Poor sleep quality
+	 </h2>
+	 <h2 onclick="rightAnswer()"  class="choices"> Reduces the risk of chronic diseases
+	  </h2>
+	 <h2 onclick="wrongAnswer1()" class="choices"> Increased risk of chronic diseases
+	 </h2>
+
+     <div id="feedback"></div>
+
+	<img id="benefits" src="img/benefits.jpg" width="215" />
+	
+</div>
+
+ <script>
+		  function rightAnswer(){
+		$("#feedback").html("<h2 style='color:green'> Correct! Being active lowers the risk of major chronic conditions (e.g., heart disease, stroke, type 2 diabetes, and several cancers).</h2>");
+			 $("#benefits").show();
+		  }
+
+		   function wrongAnswer1(){
+		 $("#feedback").html("<h2 style='color:red'> Incorrect! Exercise tends to lower these risks and boost mood.</h2>");
+			  $("#benefits").hide();
+	   }
+	       function wrongAnswer2(){
+	     $("#feedback").html("<h2 style='color:red'> Incorrect! Regular activity generally improves sleep.</h2>");
+		  $("#benefits").hide();
+	   }
+
+ </script>
+
+</body>
+</html>

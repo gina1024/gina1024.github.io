@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#wrapper {
+width: 900px;
+margin: 0 auto;
+text-align: center;
+}
+
+#ejercicio {
+border: black 5px solid;
+}
+ 
+#benefits {
+display: none; 
+border: black 5px solid;
+}
+
+body {
+	background-color: #f5e6d3;  /*light nude/beige shade*/
+}	
+
+.choices {
+cursor: pointer;
+}
+
+
