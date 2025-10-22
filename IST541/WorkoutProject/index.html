@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Workout Project — Home</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container inner">
+    <div class="site-title"><strong>Workout Project</strong></div>
+	  <nav class="nav" aria-label="Primary">
+	  <a href="index.html" active><strong>Home</strong></a>
+	  <a href="benefits.html"><strong>Benefits</strong></a> <a href="how to do a correct plank.html"><strong>How to Do a Correct Plank</strong></a> 
+	  <a href="three main ways to exercise.html"><strong>Three Main Ways to Exercise</strong></a> 
+<a href="resources1.html"><strong>Resources</strong></a>
+<a href="assessment.html"><strong>Quiz</strong></a>       
+<a href="about.html"><strong>About</strong></a> 
+</nav>
+  </div>
+</header>
+<main class="hero">
+  <section class="hero">
+    <div class="container">
+      <h1><strong>Build healthy habits with simple steps</strong></h1>
+		<p class="lead">
+  Building a fitness habit doesn’t have to be complicated. This mini-site walks you through simple steps you can start today—what to do, how to do it safely, and how to stick with it.
+</p>
+
+
+
+<div style="text-align: center">
+		
+	<img src="img/final.jpg" 
+     alt="Workout photo" 
+     style="display:block; margin:20px auto; width:510px; height:auto; border-radius:10px;">
+
+	</div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container inner"> </div>
+</footer>
+	
+<script>   // highlight current link
+  (function(){
+    var here = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav a').forEach(function(a){
+      var file = a.getAttribute('href').split('/').pop();
+      if (file === here) {
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  })();
+
+  // header shadow on scroll
+  (function(){
+    var header = document.querySelector('.site-header');
+    if(!header) return;
+    function onScroll(){
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  })();
+
+
+</script>
+</body>
+</html>
