@@ -1,0 +1,581 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* =========== Tokens & Base =========== */
+:root {
+	
+    __primary: #00B894;
+    __secondary: #0984E3;
+    __accent: #FFD166;
+    __muted: #64748B;
+    __bg: #F9FAFB;
+    __ink: #0F172A;
+    __mint-50: #E8FDF5; /* very light mint */
+    __mint-100: #D2FAEE; /* light mint border/hover */
+    __blue-50: #E7F2FF; /* very light blue (secondary alt) */
+    __radius: 10px;
+    __shadow: 0 4px 12px rgba(0,0,0,.06);
+    __fs-xxl: clamp(28px, 5vw, 44px);
+    __fs-xl: clamp(22px, 3.6vw, 34px);
+    __fs-lg: 20px;
+    __fs-md: 16px;
+    __fs-sm: 14px;
+    __space-1: 8px;
+    __space-2: 12px;
+    __space-3: 16px;
+    __space-4: 24px;
+    __space-5: 32px;
+    width: auto;
+}
+
+*,
+*::before,
+*::after{ box-sizing:border-box; }
+
+html,body{ height:100%; }
+body{
+    margin: 0;
+    font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(__ink);
+    background-color: #E8FDF5;
+    line-height: 1.55;
+}
+img,video{
+    height: 5cm;
+    display: table;
+}
+a{ color:var(__primary); text-decoration:none; }
+a:hover{
+    text-decoration: underline;
+    background-color: #CCF5E7;
+}
+
+
+/* === Page theme for Plank lesson === */
+body.mint-bg{
+  min-height: 100vh;
+  background: #CCF5E7;
+}
+
+.lesson.container{
+  background: #fffdf6;     /* soft cream card */
+  max-width: 960px;
+  margin: 28px auto;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
+}
+
+/* Step bar */
+summary.stepTitle{
+  list-style: none;
+  background: #ffe270;
+  border: 2px solid #c9a042;
+  color: #2b2b2b;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+}
+summary.stepTitle::after{
+  content: "▼";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+details[open] summary.stepTitle::after{ content: "▲"; }
+
+/* Two-column layout */
+.stepContent{
+  display: grid;
+  grid-template-columns: 1fr 280px; /* text | image */
+  gap: 20px;
+  padding-top: 12px;
+}
+.stepImage img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+
+:root{
+  __card-min: 280px;   /* try 300–360 to make images bigger */
+  __img-ratio: 4/3;    /* try 1/1 or 16/9 to experiment */
+  __gap: 24px;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat;
+  gap: var(--gap);
+  align-items: start;
+  margin-top: 1px;
+}
+
+.card{
+  border: 1px solid #e3e3e8;
+  border-radius: 12px;
+  padding: 14px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+.cards{justify-items: center}
+
+
+
+.card img{
+  width: 100%;
+  aspect-ratio: var(--img-ratio);
+  object-fit: cover;     /* switches to 'contain' if you never want cropping */
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+
+
+table {
+	margin:0 auto;  /* centers table*/
+}
+
+td {
+	background-color: white;  /* sets background color for table cells*/
+}
+
+.card h3{
+  margin: 6px 0 8px;
+  font-size: 1rem;
+}
+
+.card audio{
+  width: 100%;
+}
+
+
+
+h1{
+	text-align: center;
+	font-size: clamp(2rem, 3.2vw + 1rem, 3.2rem);
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+/* === Benefits page: centered title + bigger responsive video === */
+.page-title{
+  text-align:center;
+  margin: 16px 0 12px;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.2vw + 1rem, 3.2rem);
+}
+
+.video-wrap{
+  max-width: 850px;      /* increase to 1100px if you want larger */
+  margin: 16px auto;     /* centers the block */
+}
+.video-16x9{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;   /* 16:9 aspect ratio */
+}
+.video-16x9 iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;   /* optional */
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+
+
+/* ===== Red warning alert ===== */
+.warning{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  background: #f8d7da;              /* red background */
+  color: #7a0b1e;                   /* dark red text */
+  border: 2px solid #d9534f;        /* red border */
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 12px 0 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.warning .material-icons{
+  font-size: 22px;
+  line-height: 1;
+  color: #a71d2a;                   /* icon red */
+  margin-top: 2px;
+}
+
+.warning strong {
+  font-weight: 700;
+}
+
+@media (max-width: 720px){
+  .warning{ padding: 12px; }
+}
+
+/* Center + size for page title and byline */
+#header{
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+#header h1{
+  /* nice big, responsive title */
+  font-size: clamp(2.2rem, 4.2vw + 1rem, 3.6rem);
+  line-height: 1.12;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+#header h2{
+  font-size: clamp(1.1rem, 1.2vw + .6rem, 1.6rem);
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+/* Stack on small screens */
+@media (max-width: 720px){
+  .lesson.container{ padding: 18px; }
+  .stepContent{ grid-template-columns: 1fr; }
+}
+
+
+/* center the whole page content (optional but nice) */
+#wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#hint{
+	text-align: center;
+}
+
+/* center the images */
+#imgBox {
+  text-align: center;         /* centers inline elements */
+}
+
+#imgBox img {
+  display: block;             /* make images block-level */
+  margin: 0 auto 1rem;        /* centers the block */
+  max-width: 100%;
+  height: auto;
+}
+
+/* start with the “answer” image hidden */
+
+.assessment #imgBox img#benefits { display: none; }
+
+/* Page background and spacing */
+.page {
+  background: #f2f4f7;          /* light gray behind the white box */
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+/* The white box */
+.card {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;               /* centers the box */
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Optional polish */
+header h1 { 
+  text-align: center; 
+  margin: 24px 0 8px; 
+}
+
+header h1,
+.credits h2{
+	text-align: center;
+}
+
+.credits h2 { margin-top: 0; }
+.credits ul { padding-left: 1.25rem; line-height: 1.6; }
+.credits a { color: #3f51b5; text-decoration: none; }
+.credits a:hover { text-decoration: underline; }
+
+
+/* =========== Layout helpers =========== */
+.container{ max-width:1100px; margin-inline:auto; padding-inline:var(--space-4); }
+.stack > * + *{ margin-top:var(--space-3); } /* simple vertical spacing */
+
+.site-header .inner{
+  background:#F7F7F7;      /* light mint fill */
+  border: 1px solid var(--mint-100);
+  border-radius: 14px;
+  padding: 12px;                   /* keep your nav spacing */
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+
+/* =========== Header / Nav =========== */
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #E5E7EB;
+}
+.site-header .inner{ display:flex; align-items:center; justify-content:space-between; padding:var(--space-3) 0; }
+.site-title{ font-weight:700; letter-spacing:.2px; }
+
+/* Nav as boxed/pill links */
+	
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.nav a{
+  flex: 1 1 140px;
+  display: inline-block;         /* block if you prefer full-width */
+  text-align: center;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #CCF;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  transition: background .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+
+.nav a:hover{
+  background: #dff9f0;
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.nav a.active{
+    background: #D2FAEE;   /* ensure the green wins */
+    color: #D2FAEE !important;
+    /* [disabled]border-left-color: --primary; */
+    /* [disabled]border-right-color: --primary; */
+    /* [disabled]border-top-color: var(; */
+    box-shadow: 0 8px 18px rgba(0,0,0,.04);
+}
+	
+ 
+
+.nav a:focus-visible{
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* TEMP: prove nothing can override this */
+.nav a[href="index.html"] {
+  background:#CCF !important;
+  color:#0F172A !important;
+  box-shadow:0 8px 18px rgba(0,0,0,.04);
+
+}
+
+.nav a.active{
+    background: #D2FAEE;   /* ensure the green wins */
+}
+
+
+
+
+/* =========== Hero & Headings =========== */
+
+.hero-img {
+  display: block;         /* lets margin auto center it */
+  max-width: 560px;       /* keeps it from growing too large */
+  width: 60%;            /* responsive */
+  height: auto;           /* keeps aspect ratio */
+  margin: 12px auto 18px;    /* space above, centered */
+  border-radius: 10px;    /* optional: rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,.08); /* optional: soft shadow */
+}
+
+/* === Three Exercises grid === */
+.exercise-grid{
+  max-width: 1100px;
+  margin: 16px auto;
+  display: grid;
+  gap: 18px;
+
+}
+.exercise-card{
+  background: #fffdf6;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+.exercise-card img{
+  width: 100%;
+  height: 240px;          /* adjust 220–260px to taste */
+  object-fit: cover;      /* uniform crop without distortion */
+  border-radius: 8px;
+  display: block;
+}
+.exercise-card audio{
+  width: 90%;
+  margin-top: 6px;
+}
+/* phones: stack vertically */
+@media (max-width: 768px){
+  .exercise-grid{ grid-template-columns: 1fr; }
+}
+
+.hero{
+  min-height: 50vh;          /* height of the hero area */
+  display: flex;             /* enable centering */
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  text-align: center;        /* center the text */
+  background: linear-gradient(135deg, #E8FDF5 0%, #F9FAFB 100%)
+  
+                  /* no extra padding needed */
+ 
+}
+
+.hero h1{
+  font-size: clamp( 40px, 6vw, 64px);
+  margin: 0 0 8px; 
+	font-weight: 700
+		
+/* small gap under the heading */
+		
+}
+
+h1{ font-size: var(__fs-xl); line-height:1.2; margin:var(--space-4) 0 var(--space-2); }
+h2{ font-size:32px; margin-top:var(--space-4); }
+h3{ font-size:22px; margin-top:var(--space-3); }
+.lead{ font-size: 20px;
+color:#334155;
+font-weight:400
+}
+
+/* Centered map section */
+.map-section{
+  max-width: 1100px;    /* page width cap */
+  margin: 0 auto;       /* centers the whole block */
+  padding: 16px 12px;
+}
+
+/* Center + style the heading above the map */
+.map-title{
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 10px 0 18px;
+  font-weight: 800;
+}
+
+/* Responsive iframe container (centers and controls width) */
+.map-wrap{
+  max-width: 500px;     /* make the map not full-bleed; adjust to taste */
+  height: 45vh;         /* map height; try 60–80vh */
+  margin: 0 auto;       /* centers the map box */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* Put two maps side-by-side */
+
+
+/* Each map fills its grid cell (override previous sizing) */
+.map-row {
+ display: flex;
+	gap: 16px;
+	max-width: 1100px;
+	margin: 0 auto ;
+	padding: 8px 0;
+	
+}
+	
+.map-row .map-wrap{
+	flex: 1 1 0;
+	max-width: none !important;
+	margin: 0 !important;
+	height: 45vh;
+	
+}
+
+
+
+/* Mobile: stack them */
+@media (max-width: 900px) {
+  .map-grid { grid-template-columns: 1fr; }
+  .map-grid .map-wrap { height: 40vh; }
+}
+
+
+
+
+
+/* Mobile: stack them */
+@media (max-width: 900px){
+  .map-grid{ grid-template-columns: 1fr; }
+  .map-grid .map-wrap{ height: 40vh; }
+}
+
+
+/* Make the iframe fill the wrapper */
+.map-wrap iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+
+/* =========== Buttons (optional) =========== */
+.btn{ display:inline-block; padding:10px 16px; border-radius:8px; background:var(--primary); color:#fff; border:0; cursor:pointer; }
+.btn.secondary{ background:var(--secondary); }
+.btn.ghost{ background:transparent; color:var(--primary); border:1px solid currentColor; }
+
+/* =========== Article / Lesson =========== */
+.stepTitle{ font-weight:700; margin:var(--space-4) 0 var(--space-2); }
+.stepContent p{ margin:0 0 var(--space-2); }
+
+/* collapsible steps */
+details{ border:1px solid #E5E7EB; border-radius:var(--radius); padding:var(--space-2) var(--space-3); margin:var(--space-3) 0; background:#fff; }
+summary{ cursor:pointer; font-weight:600; list-style:none; }
+summary::-webkit-details-marker{ display:none; }
+
+/* references list */
+.references{ margin:var(--space-3) 0 var(--space-5); padding-left:1.2rem; }
+.references li{ margin:6px 0; }
+
+/* =========== Cards / Utilities =========== */
+.card{ background:#fff; border:1px solid #E5E7EB; border-radius:var(--radius); padding:var(--space-4); box-shadow:var(--shadow); }
+.muted{ color:var(--muted); }
+.center{ text-align:center; }
+.round{ border-radius:var(--radius); }
+
+/* =========== Footer =========== */
+.site-footer{ border-top:1px solid #E5E7EB; color:var(--muted); font-size:var(--fs-sm); }
+.site-footer .inner{ padding:var(--space-3) 0; }
+
+/* =========== Responsive =========== */
+@media (max-width:800px){
+  .hero{ padding:36px 0; }
+  .nav{ display:flex; flex-wrap:wrap; gap:6px; }
+}
