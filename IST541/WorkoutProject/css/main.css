@@ -279,6 +279,40 @@ h1{
 
 .assessment #imgBox img#benefits { display: none; }
 
+/* Page background and spacing */
+.page {
+  background: #f2f4f7;          /* light gray behind the white box */
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+/* The white box */
+.card {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;               /* centers the box */
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Optional polish */
+header h1 { 
+  text-align: center; 
+  margin: 24px 0 8px; 
+}
+
+header h1,
+.credits h2{
+	text-align: center;
+}
+
+.credits h2 { margin-top: 0; }
+.credits ul { padding-left: 1.25rem; line-height: 1.6; }
+.credits a { color: #3f51b5; text-decoration: none; }
+.credits a:hover { text-decoration: underline; }
+
 
 /* =========== Layout helpers =========== */
 .container{ max-width:1100px; margin-inline:auto; padding-inline:var(--space-4); }
